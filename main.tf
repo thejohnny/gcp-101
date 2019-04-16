@@ -10,15 +10,8 @@ variable "project_services" {
   ]
 }
 
-resource "google_project" "main" {
-  name            = "${var.project_name}"
-  project_id      = "${var.project_name}"
-  org_id          = "${var.org_id}"
-  billing_account = "${var.billing_account}"
-}
-
 resource "google_project_services" "main" {
-  project  = "${google_project.main.project_id}"
+  project  = "${var.project_id}"
   services = "${var.project_services}"
 }
 
