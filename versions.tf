@@ -1,8 +1,8 @@
 provider "google" {
   version     = "2.3"
-  credentials = "${file("account.json")}"
-  project     = "johnny-carlin"
-  region      = "us-central1"
+  credentials = "${file("account.json")}" 
+  project     = "${var.project_id}"
+  region      = "${var.region}"
 }
 
 provider "null" {
